@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D554865F1C86F2F000D6C59B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D554865E1C86F2F000D6C59B /* main.m */; };
+		D55486621C86F2F000D6C59B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D55486611C86F2F000D6C59B /* AppDelegate.m */; };
+		D55486651C86F2F000D6C59B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55486641C86F2F000D6C59B /* ViewController.m */; };
+		D55486681C86F2F000D6C59B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55486661C86F2F000D6C59B /* Main.storyboard */; };
+		D554866A1C86F2F000D6C59B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55486691C86F2F000D6C59B /* Assets.xcassets */; };
+		D554866D1C86F2F000D6C59B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D554866B1C86F2F000D6C59B /* LaunchScreen.storyboard */; };
+		D55486781C86F2F000D6C59B /* GGCustomStepperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D55486771C86F2F000D6C59B /* GGCustomStepperTests.m */; };
+		D55486831C86F2F000D6C59B /* GGCustomStepperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D55486821C86F2F000D6C59B /* GGCustomStepperUITests.m */; };
+		D55486921C86F30400D6C59B /* GGCustomStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = D55486911C86F30400D6C59B /* GGCustomStepper.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D55486741C86F2F000D6C59B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D55486521C86F2F000D6C59B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D55486591C86F2F000D6C59B;
+			remoteInfo = GGCustomStepper;
+		};
+		D554867F1C86F2F000D6C59B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D55486521C86F2F000D6C59B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D55486591C86F2F000D6C59B;
+			remoteInfo = GGCustomStepper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D554865A1C86F2F000D6C59B /* GGCustomStepper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GGCustomStepper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D554865E1C86F2F000D6C59B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D55486601C86F2F000D6C59B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D55486611C86F2F000D6C59B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D55486631C86F2F000D6C59B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D55486641C86F2F000D6C59B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D55486671C86F2F000D6C59B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D55486691C86F2F000D6C59B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D554866C1C86F2F000D6C59B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D554866E1C86F2F000D6C59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D55486731C86F2F000D6C59B /* GGCustomStepperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GGCustomStepperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D55486771C86F2F000D6C59B /* GGCustomStepperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GGCustomStepperTests.m; sourceTree = "<group>"; };
+		D55486791C86F2F000D6C59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D554867E1C86F2F000D6C59B /* GGCustomStepperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GGCustomStepperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D55486821C86F2F000D6C59B /* GGCustomStepperUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GGCustomStepperUITests.m; sourceTree = "<group>"; };
+		D55486841C86F2F000D6C59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D55486901C86F30400D6C59B /* GGCustomStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGCustomStepper.h; sourceTree = "<group>"; };
+		D55486911C86F30400D6C59B /* GGCustomStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGCustomStepper.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D55486571C86F2F000D6C59B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D55486701C86F2F000D6C59B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D554867B1C86F2F000D6C59B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D55486511C86F2F000D6C59B = {
+			isa = PBXGroup;
+			children = (
+				D554865C1C86F2F000D6C59B /* GGCustomStepper */,
+				D55486761C86F2F000D6C59B /* GGCustomStepperTests */,
+				D55486811C86F2F000D6C59B /* GGCustomStepperUITests */,
+				D554865B1C86F2F000D6C59B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D554865B1C86F2F000D6C59B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D554865A1C86F2F000D6C59B /* GGCustomStepper.app */,
+				D55486731C86F2F000D6C59B /* GGCustomStepperTests.xctest */,
+				D554867E1C86F2F000D6C59B /* GGCustomStepperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D554865C1C86F2F000D6C59B /* GGCustomStepper */ = {
+			isa = PBXGroup;
+			children = (
+				D55486601C86F2F000D6C59B /* AppDelegate.h */,
+				D55486611C86F2F000D6C59B /* AppDelegate.m */,
+				D55486631C86F2F000D6C59B /* ViewController.h */,
+				D55486641C86F2F000D6C59B /* ViewController.m */,
+				D55486901C86F30400D6C59B /* GGCustomStepper.h */,
+				D55486911C86F30400D6C59B /* GGCustomStepper.m */,
+				D55486661C86F2F000D6C59B /* Main.storyboard */,
+				D55486691C86F2F000D6C59B /* Assets.xcassets */,
+				D554866B1C86F2F000D6C59B /* LaunchScreen.storyboard */,
+				D554866E1C86F2F000D6C59B /* Info.plist */,
+				D554865D1C86F2F000D6C59B /* Supporting Files */,
+			);
+			path = GGCustomStepper;
+			sourceTree = "<group>";
+		};
+		D554865D1C86F2F000D6C59B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D554865E1C86F2F000D6C59B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D55486761C86F2F000D6C59B /* GGCustomStepperTests */ = {
+			isa = PBXGroup;
+			children = (
+				D55486771C86F2F000D6C59B /* GGCustomStepperTests.m */,
+				D55486791C86F2F000D6C59B /* Info.plist */,
+			);
+			path = GGCustomStepperTests;
+			sourceTree = "<group>";
+		};
+		D55486811C86F2F000D6C59B /* GGCustomStepperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D55486821C86F2F000D6C59B /* GGCustomStepperUITests.m */,
+				D55486841C86F2F000D6C59B /* Info.plist */,
+			);
+			path = GGCustomStepperUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D55486591C86F2F000D6C59B /* GGCustomStepper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D55486871C86F2F000D6C59B /* Build configuration list for PBXNativeTarget "GGCustomStepper" */;
+			buildPhases = (
+				D55486561C86F2F000D6C59B /* Sources */,
+				D55486571C86F2F000D6C59B /* Frameworks */,
+				D55486581C86F2F000D6C59B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GGCustomStepper;
+			productName = GGCustomStepper;
+			productReference = D554865A1C86F2F000D6C59B /* GGCustomStepper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D55486721C86F2F000D6C59B /* GGCustomStepperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D554868A1C86F2F000D6C59B /* Build configuration list for PBXNativeTarget "GGCustomStepperTests" */;
+			buildPhases = (
+				D554866F1C86F2F000D6C59B /* Sources */,
+				D55486701C86F2F000D6C59B /* Frameworks */,
+				D55486711C86F2F000D6C59B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D55486751C86F2F000D6C59B /* PBXTargetDependency */,
+			);
+			name = GGCustomStepperTests;
+			productName = GGCustomStepperTests;
+			productReference = D55486731C86F2F000D6C59B /* GGCustomStepperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D554867D1C86F2F000D6C59B /* GGCustomStepperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D554868D1C86F2F000D6C59B /* Build configuration list for PBXNativeTarget "GGCustomStepperUITests" */;
+			buildPhases = (
+				D554867A1C86F2F000D6C59B /* Sources */,
+				D554867B1C86F2F000D6C59B /* Frameworks */,
+				D554867C1C86F2F000D6C59B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D55486801C86F2F000D6C59B /* PBXTargetDependency */,
+			);
+			name = GGCustomStepperUITests;
+			productName = GGCustomStepperUITests;
+			productReference = D554867E1C86F2F000D6C59B /* GGCustomStepperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D55486521C86F2F000D6C59B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = LGQ;
+				TargetAttributes = {
+					D55486591C86F2F000D6C59B = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					D55486721C86F2F000D6C59B = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = D55486591C86F2F000D6C59B;
+					};
+					D554867D1C86F2F000D6C59B = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = D55486591C86F2F000D6C59B;
+					};
+				};
+			};
+			buildConfigurationList = D55486551C86F2F000D6C59B /* Build configuration list for PBXProject "GGCustomStepper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D55486511C86F2F000D6C59B;
+			productRefGroup = D554865B1C86F2F000D6C59B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D55486591C86F2F000D6C59B /* GGCustomStepper */,
+				D55486721C86F2F000D6C59B /* GGCustomStepperTests */,
+				D554867D1C86F2F000D6C59B /* GGCustomStepperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D55486581C86F2F000D6C59B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D554866D1C86F2F000D6C59B /* LaunchScreen.storyboard in Resources */,
+				D554866A1C86F2F000D6C59B /* Assets.xcassets in Resources */,
+				D55486681C86F2F000D6C59B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D55486711C86F2F000D6C59B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D554867C1C86F2F000D6C59B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D55486561C86F2F000D6C59B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D55486921C86F30400D6C59B /* GGCustomStepper.m in Sources */,
+				D55486651C86F2F000D6C59B /* ViewController.m in Sources */,
+				D55486621C86F2F000D6C59B /* AppDelegate.m in Sources */,
+				D554865F1C86F2F000D6C59B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D554866F1C86F2F000D6C59B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D55486781C86F2F000D6C59B /* GGCustomStepperTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D554867A1C86F2F000D6C59B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D55486831C86F2F000D6C59B /* GGCustomStepperUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D55486751C86F2F000D6C59B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D55486591C86F2F000D6C59B /* GGCustomStepper */;
+			targetProxy = D55486741C86F2F000D6C59B /* PBXContainerItemProxy */;
+		};
+		D55486801C86F2F000D6C59B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D55486591C86F2F000D6C59B /* GGCustomStepper */;
+			targetProxy = D554867F1C86F2F000D6C59B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D55486661C86F2F000D6C59B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D55486671C86F2F000D6C59B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D554866B1C86F2F000D6C59B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D554866C1C86F2F000D6C59B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D55486851C86F2F000D6C59B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D55486861C86F2F000D6C59B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D55486881C86F2F000D6C59B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GGCustomStepper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lchr.GGCustomStepper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D55486891C86F2F000D6C59B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GGCustomStepper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lchr.GGCustomStepper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D554868B1C86F2F000D6C59B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GGCustomStepperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lchr.GGCustomStepperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GGCustomStepper.app/GGCustomStepper";
+			};
+			name = Debug;
+		};
+		D554868C1C86F2F000D6C59B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GGCustomStepperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lchr.GGCustomStepperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GGCustomStepper.app/GGCustomStepper";
+			};
+			name = Release;
+		};
+		D554868E1C86F2F000D6C59B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GGCustomStepperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lchr.GGCustomStepperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GGCustomStepper;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		D554868F1C86F2F000D6C59B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GGCustomStepperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lchr.GGCustomStepperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GGCustomStepper;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D55486551C86F2F000D6C59B /* Build configuration list for PBXProject "GGCustomStepper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D55486851C86F2F000D6C59B /* Debug */,
+				D55486861C86F2F000D6C59B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D55486871C86F2F000D6C59B /* Build configuration list for PBXNativeTarget "GGCustomStepper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D55486881C86F2F000D6C59B /* Debug */,
+				D55486891C86F2F000D6C59B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D554868A1C86F2F000D6C59B /* Build configuration list for PBXNativeTarget "GGCustomStepperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D554868B1C86F2F000D6C59B /* Debug */,
+				D554868C1C86F2F000D6C59B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D554868D1C86F2F000D6C59B /* Build configuration list for PBXNativeTarget "GGCustomStepperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D554868E1C86F2F000D6C59B /* Debug */,
+				D554868F1C86F2F000D6C59B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D55486521C86F2F000D6C59B /* Project object */;
+}
