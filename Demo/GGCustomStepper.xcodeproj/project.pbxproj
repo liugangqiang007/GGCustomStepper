@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D51A094A1CE2CF3A0062D5D7 /* GGCustomStepper.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D51A09491CE2CF3A0062D5D7 /* GGCustomStepper.bundle */; };
 		D554865F1C86F2F000D6C59B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D554865E1C86F2F000D6C59B /* main.m */; };
 		D55486621C86F2F000D6C59B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D55486611C86F2F000D6C59B /* AppDelegate.m */; };
 		D55486651C86F2F000D6C59B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55486641C86F2F000D6C59B /* ViewController.m */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D51A09491CE2CF3A0062D5D7 /* GGCustomStepper.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GGCustomStepper.bundle; sourceTree = "<group>"; };
 		D554865A1C86F2F000D6C59B /* GGCustomStepper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GGCustomStepper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D554865E1C86F2F000D6C59B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D55486601C86F2F000D6C59B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				D55486641C86F2F000D6C59B /* ViewController.m */,
 				D55486901C86F30400D6C59B /* GGCustomStepper.h */,
 				D55486911C86F30400D6C59B /* GGCustomStepper.m */,
+				D51A09491CE2CF3A0062D5D7 /* GGCustomStepper.bundle */,
 				D55486661C86F2F000D6C59B /* Main.storyboard */,
 				D55486691C86F2F000D6C59B /* Assets.xcassets */,
 				D554866B1C86F2F000D6C59B /* LaunchScreen.storyboard */,
@@ -250,6 +253,7 @@
 			files = (
 				D554866D1C86F2F000D6C59B /* LaunchScreen.storyboard in Resources */,
 				D554866A1C86F2F000D6C59B /* Assets.xcassets in Resources */,
+				D51A094A1CE2CF3A0062D5D7 /* GGCustomStepper.bundle in Resources */,
 				D55486681C86F2F000D6C59B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +510,7 @@
 				D55486891C86F2F000D6C59B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D554868A1C86F2F000D6C59B /* Build configuration list for PBXNativeTarget "GGCustomStepperTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +519,7 @@
 				D554868C1C86F2F000D6C59B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D554868D1C86F2F000D6C59B /* Build configuration list for PBXNativeTarget "GGCustomStepperUITests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +528,7 @@
 				D554868F1C86F2F000D6C59B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

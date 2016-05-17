@@ -72,10 +72,10 @@ static const CGFloat GGCornerRadius           = 4;
     self.textColor          = self.amountLabel.textColor;
     self.textFont           = self.amountLabel.font;
     
-    [self setDecrementImage:[UIImage imageNamed:@"btn_jian_n1"] forState:UIControlStateNormal];
-    [self setDecrementImage:[UIImage imageNamed:@"btn_jian_d"] forState:UIControlStateDisabled];
-    [self setIncrementImage:[UIImage imageNamed:@"btn_add_n1"] forState:UIControlStateNormal];
-    [self setIncrementImage:[UIImage imageNamed:@"btn_add_d"] forState:UIControlStateDisabled];
+    [self setDecrementImage:[UIImage imageNamed:@"GGCustomStepper.bundle/Images/btn_jian_n1.png"] forState:UIControlStateNormal];
+    [self setDecrementImage:[UIImage imageNamed:@"GGCustomStepper.bundle/Images/btn_jian_d.png"] forState:UIControlStateDisabled];
+    [self setIncrementImage:[UIImage imageNamed:@"GGCustomStepper.bundle/Images/btn_add_n1.png"] forState:UIControlStateNormal];
+    [self setIncrementImage:[UIImage imageNamed:@"GGCustomStepper.bundle/Images/btn_add_d.png"] forState:UIControlStateDisabled];
     
     [self setBackgroundImageWithColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [self setBackgroundImageWithColor:[UIColor whiteColor] forState:UIControlStateDisabled];
