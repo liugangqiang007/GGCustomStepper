@@ -19,14 +19,14 @@ static const CGFloat GGAmountLabelScale       = 0.4;
 static const CGFloat GGCornerRadius           = 4;
 
 
-@interface GGCustomStepper ()
+@interface GGCustomStepper ()<UITextFieldDelegate>
 
 /** 减量按钮 */
 @property (nonatomic, weak) UIButton *decrementButton;
 /** 增量按钮 */
 @property (nonatomic, weak) UIButton *incrementButton;
 /** 显示视图 */
-@property (nonatomic, weak) UILabel *amountLabel;
+@property (nonatomic, weak) UITextField *amountField;
 
 /** 垂直分割线 */
 @property (nonatomic, weak) UIView *leftVerticalLine;
@@ -56,6 +56,27 @@ static const CGFloat GGCornerRadius           = 4;
     return self;
 }
 
+#pragma mark - UITextFieldDelegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (string.length > 0) {
+        
+        return [self isNumText:string];
+    } else {
+        return YES;
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    CGFloat value = textField.text.integerValue;
+    if (value > _maximumValue || value < _minimumValue) {
+        value = _value;
+//        [PopAlertView showError:@"数量超出范围~"];
+    }
+
+    self.value = value;
+}
+
 #pragma mark - personal
 - (void)initialization {
     
@@ -69,13 +90,13 @@ static const CGFloat GGCornerRadius           = 4;
     self.lineWidth          = GGLineWidth;
     self.stepValue          = GGStepValue;
     self.amountLabelScale   = GGAmountLabelScale;
-    self.textColor          = self.amountLabel.textColor;
-    self.textFont           = self.amountLabel.font;
+    self.textColor          = self.amountField.textColor;
+    self.textFont           = self.amountField.font;
     
-    [self setDecrementImage:[UIImage imageNamed:@"btn_jian_n1"] forState:UIControlStateNormal];
-    [self setDecrementImage:[UIImage imageNamed:@"btn_jian_d"] forState:UIControlStateDisabled];
-    [self setIncrementImage:[UIImage imageNamed:@"btn_add_n1"] forState:UIControlStateNormal];
-    [self setIncrementImage:[UIImage imageNamed:@"btn_add_d"] forState:UIControlStateDisabled];
+    [self setDecrementImage:[UIImage imageNamed:@"GGCustomStepper.bundle/Images/btn_jian_n1.png"] forState:UIControlStateNormal];
+    [self setDecrementImage:[UIImage imageNamed:@"GGCustomStepper.bundle/Images/btn_jian_d.png"] forState:UIControlStateDisabled];
+    [self setIncrementImage:[UIImage imageNamed:@"GGCustomStepper.bundle/Images/btn_add_n1.png"] forState:UIControlStateNormal];
+    [self setIncrementImage:[UIImage imageNamed:@"GGCustomStepper.bundle/Images/btn_add_d.png"] forState:UIControlStateDisabled];
     
     [self setBackgroundImageWithColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [self setBackgroundImageWithColor:[UIColor whiteColor] forState:UIControlStateDisabled];
@@ -100,7 +121,7 @@ static const CGFloat GGCornerRadius           = 4;
     CGFloat rightLineX = incrementButtonX;
     
     self.decrementButton.frame = CGRectMake(decrementButtonX, 0, buttonWidth, height);
-    self.amountLabel.frame = CGRectMake(labelX, 0, labelWidth, height);
+    self.amountField.frame = CGRectMake(labelX, 0, labelWidth, height);
     self.incrementButton.frame = CGRectMake(incrementButtonX, 0, buttonWidth, height);
     
     self.leftVerticalLine.frame = CGRectMake(leftLineX, 0, lineWidth, height);
@@ -175,6 +196,31 @@ static const CGFloat GGCornerRadius           = 4;
     return image;
 }
 
+- (BOOL)isNumText:(NSString *)str{
+    
+    NSScanner* scan = [NSScanner scannerWithString:str];
+    int val;
+    return [scan scanInt:&val] && [scan isAtEnd];
+    
+}
+
+- (UIToolbar *)addInputAccessoryView {
+    /** ToolBar */
+    UIToolbar *tool = [[UIToolbar alloc] init];
+    tool.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44);
+//    tool.barTintColor = kColorFCFCFC;
+    
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(toolbarDoneClicked)];
+    tool.items = @[flexSpace, item];
+    return tool;
+    
+}
+
+- (void)toolbarDoneClicked {
+    [self.amountField resignFirstResponder];
+}
+
 #pragma mark - setter
 
 - (void)setMinimumValue:(double)minimumValue {
@@ -194,6 +240,8 @@ static const CGFloat GGCornerRadius           = 4;
 
 - (void)setValue:(double)value {
     
+    
+    
     if (self.valueChange) {
         self.valueChange(_value, value);
     } else if ([self.delegate respondsToSelector:@selector(customStepper:changeValue:oldValue:)]) {
@@ -202,7 +250,7 @@ static const CGFloat GGCornerRadius           = 4;
     
     _value = value;
     
-    self.amountLabel.text = [NSString stringWithFormat:@"%.0f", value];
+    self.amountField.text = [NSString stringWithFormat:@"%.0f", value];
     self.decrementButton.enabled = value - self.stepValue >= self.minimumValue;
     self.incrementButton.enabled = value + self.stepValue <= self.maximumValue;
 }
@@ -244,12 +292,12 @@ static const CGFloat GGCornerRadius           = 4;
 
 - (void)setTextFont:(UIFont *)textFont {
     _textFont = textFont;
-    self.amountLabel.font = textFont;
+    self.amountField.font = textFont;
 }
 
 - (void)setTextColor:(UIColor *)textColor {
     _textColor = textColor;
-    self.amountLabel.textColor = textColor;
+    self.amountField.textColor = textColor;
 }
 
 - (void)setTextFont:(UIFont *)textFont textColor:(UIColor *)textColor {
@@ -277,14 +325,17 @@ static const CGFloat GGCornerRadius           = 4;
 }
 
 #pragma mark - getter
-- (UILabel *)amountLabel {
-    if (_amountLabel == nil) {
-        UILabel *amountLabel = [[UILabel alloc] init];
+- (UITextField *)amountField {
+    if (_amountField == nil) {
+        UITextField *amountLabel = [[UITextField alloc] init];
         amountLabel.textAlignment = NSTextAlignmentCenter;
+        amountLabel.delegate = self;
+        amountLabel.keyboardType = UIKeyboardTypeNumberPad;
+        amountLabel.inputAccessoryView = [self addInputAccessoryView];
         [self addSubview:amountLabel];
-        _amountLabel = amountLabel;
+        _amountField = amountLabel;
     }
-    return _amountLabel;
+    return _amountField;
 }
 
 - (UIButton *)decrementButton {

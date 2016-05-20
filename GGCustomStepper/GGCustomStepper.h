@@ -30,7 +30,7 @@ typedef void(^GGStepperValueChangeBlock)(double oldValue, double newValue);
 
 /** 当前值,默认1.0 */
 @property(nonatomic, assign) double value;
-/** 最小值, 默认1.0 */
+/** 最小值, 默认0.0 */
 @property(nonatomic, assign) double minimumValue;
 /** 最大值, 默认100.0 */
 @property(nonatomic, assign) double maximumValue;
@@ -57,11 +57,9 @@ typedef void(^GGStepperValueChangeBlock)(double oldValue, double newValue);
 /** 线条宽度, 默认0.5 */
 @property(nonatomic, assign) CGFloat lineWidth;
 
-
-
-
 /// 统一设置方法
 - (void)setTextFont:(nullable UIFont *)textFont textColor:(nullable UIColor *)textColor;
+
 
 /// 加/减量按钮的背景图
 - (void)setBackgroundImageWithColor:(nullable UIColor *)color forState:(UIControlState)state;

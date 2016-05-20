@@ -30,7 +30,7 @@ typedef void(^GGStepperValueChangeBlock)(double oldValue, double newValue);
 
 /** 当前值,默认1.0 */
 @property(nonatomic, assign) double value;
-/** 最小值, 默认1.0 */
+/** 最小值, 默认0.0 */
 @property(nonatomic, assign) double minimumValue;
 /** 最大值, 默认100.0 */
 @property(nonatomic, assign) double maximumValue;
