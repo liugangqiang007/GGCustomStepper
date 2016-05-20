@@ -239,9 +239,7 @@ static const CGFloat GGCornerRadius           = 4;
 }
 
 - (void)setValue:(double)value {
-    
-    
-    
+
     if (self.valueChange) {
         self.valueChange(_value, value);
     } else if ([self.delegate respondsToSelector:@selector(customStepper:changeValue:oldValue:)]) {
