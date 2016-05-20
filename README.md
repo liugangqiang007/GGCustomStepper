@@ -1,16 +1,16 @@
 # GGCustomStepper
----
+
 仿照 UIStepper 的计量控件，中间显示 value 值。类似京东淘宝的商品加减控件  
   
     
 # 概述
----
+
 仿照 iOS 的 UIStepper 的计量控件，中间显示 value 值，支持文本输入。类似淘宝京东的商品加减控件 
  
 ![image](https://github.com/251143492/GGCustomStepper/blob/master/GGCustomStepper.png)
 
 # Usage
----
+
 先引入头文件：  
 
 	#import "GGCustomStepper.h"
@@ -35,7 +35,7 @@
     [stepper setIncrementImage:[UIImage imageNamed:@"btn_add_d"] forState:UIControlStateNormal];
     [stepper setDecrementImage:[UIImage imageNamed:@"btn_jian_d"] forState:UIControlStateNormal];
 
-![image](https://github.com/251143492/GGCustomStepper/blob/master/GGCustomStepper.png)
+![image](https://github.com/251143492/GGCustomStepper/blob/master/GGCustomStepper2.png)
 
 数值设置
 
