@@ -71,7 +71,7 @@ static const CGFloat GGCornerRadius           = 4;
     CGFloat value = textField.text.integerValue;
     if (value > _maximumValue || value < _minimumValue) {
         value = _value;
-//        [PopAlertView showError:@"数量超出范围~"];
+        // 数量超出范围~
     }
 
     self.value = value;
@@ -100,6 +100,9 @@ static const CGFloat GGCornerRadius           = 4;
     
     [self setBackgroundImageWithColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [self setBackgroundImageWithColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [self addGestureRecognizer:tap];
 }
 
 // 布局
@@ -128,6 +131,42 @@ static const CGFloat GGCornerRadius           = 4;
     self.rightVerticalLine.frame = CGRectMake(rightLineX, 0, lineWidth, height);
 }
 
+- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
+    
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    
+    UIGraphicsBeginImageContext(rect.size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+- (BOOL)isNumText:(NSString *)str{
+    
+    NSScanner* scan = [NSScanner scannerWithString:str];
+    int val;
+    return [scan scanInt:&val] && [scan isAtEnd];
+    
+}
+
+- (UIToolbar *)addInputAccessoryView {
+    /** ToolBar */
+    UIToolbar *tool = [[UIToolbar alloc] init];
+    tool.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44);
+
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(toolbarDoneClicked)];
+    tool.items = @[flexSpace, item];
+    return tool;
+    
+}
+#pragma mark - action
 // 减量
 - (void)decrement {
     double value = self.value - self.stepValue;
@@ -146,7 +185,7 @@ static const CGFloat GGCornerRadius           = 4;
 
 // 长按减量
 - (void)decrementButtonLongPress:(UILongPressGestureRecognizer *)longPress {
-
+    
     [self changeAmountWithLongPress:longPress selector:@selector(decrement)];
 }
 
@@ -179,47 +218,14 @@ static const CGFloat GGCornerRadius           = 4;
         self.timer = nil;
     }
 }
-
-- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
-    
-    CGRect rect = CGRectMake(0, 0, size.width, size.height);
-    
-    UIGraphicsBeginImageContext(rect.size);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
-
-- (BOOL)isNumText:(NSString *)str{
-    
-    NSScanner* scan = [NSScanner scannerWithString:str];
-    int val;
-    return [scan scanInt:&val] && [scan isAtEnd];
-    
-}
-
-- (UIToolbar *)addInputAccessoryView {
-    /** ToolBar */
-    UIToolbar *tool = [[UIToolbar alloc] init];
-    tool.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44);
-//    tool.barTintColor = kColorFCFCFC;
-    
-    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(toolbarDoneClicked)];
-    tool.items = @[flexSpace, item];
-    return tool;
-    
-}
-
 - (void)toolbarDoneClicked {
     [self.amountField resignFirstResponder];
 }
+
+- (void)tapAction {
+    
+}
+
 
 #pragma mark - setter
 

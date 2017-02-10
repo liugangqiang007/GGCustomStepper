@@ -59,6 +59,7 @@
 
 }
 
+
 - (void)customStepper:(GGCustomStepper *)customStepper changeValue:(double)newValue oldValue:(double)oldValue {
     NSLog(@"delegate:oldValue--%.0f, newValue--%.0f", oldValue, newValue);
 }
