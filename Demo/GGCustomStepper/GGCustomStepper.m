@@ -8,10 +8,13 @@
 
 #import "GGCustomStepper.h"
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
 #define GGlineColor [UIColor lightGrayColor]
 static const double  GGAutorepeatTimeInterval = 0.2;
 static const double  GGMinimumValue           = 0.0;
-static const double  GGMaximumValue           = 100.0;
+static const double  GGMaximumValue           = CGFLOAT_MAX;
 static const double  GGDefaultValue           = GGMinimumValue;
 static const double  GGStepValue              = 1.0;
 static const CGFloat GGLineWidth              = 0.5;
@@ -57,6 +60,10 @@ static const CGFloat GGCornerRadius           = 4;
 }
 
 #pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    return self.inputValue;
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (string.length > 0) {
         
@@ -80,8 +87,10 @@ static const CGFloat GGCornerRadius           = 4;
 #pragma mark - personal
 - (void)initialization {
     
+    self.backgroundColor    = [UIColor whiteColor];
     self.layer.cornerRadius = GGCornerRadius;
     self.clipsToBounds      = YES;
+    self.inputValue         = YES;
     self.autorepeat         = YES;
     self.minimumValue       = GGMinimumValue;
     self.maximumValue       = GGMaximumValue;
@@ -402,3 +411,5 @@ static const CGFloat GGCornerRadius           = 4;
 }
 
 @end
+
+#pragma clang diagnostic pop

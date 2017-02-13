@@ -26,18 +26,20 @@ typedef void(^GGStepperValueChangeBlock)(double oldValue, double newValue);
 @interface GGCustomStepper : UIView
 
 /** 长按是否一直触发变化,默认yes */
-@property(nonatomic, assign) BOOL autorepeat;
+@property (nonatomic, assign) BOOL autorepeat;
+/** 是否可以手动输入数值,默认yes */
+@property (nonatomic, assign) BOOL inputValue;
 
-/** 当前值,默认1.0 */
-@property(nonatomic, assign) double value;
+/** 当前值,默认0.0 */
+@property (nonatomic, assign) double value;
 /** 最小值, 默认0.0 */
-@property(nonatomic, assign) double minimumValue;
-/** 最大值, 默认100.0 */
-@property(nonatomic, assign) double maximumValue;
+@property (nonatomic, assign) double minimumValue;
+/** 最大值, 默认 CGFLOAT_MAX */
+@property (nonatomic, assign) double maximumValue;
 /** 每次更变值, 默认1.0 */
-@property(nonatomic, assign) double stepValue;
+@property (nonatomic, assign) double stepValue;
 
-/** 每次 value 的值改变时会调用这个 block 或者代理, 传出旧值和新值
+/** 每次 value 的值改变时会调用 block 或者代理, 传出旧值和新值
     block的优先级高于代理
  */
 @property (nonatomic, copy, nullable) GGStepperValueChangeBlock valueChange;
@@ -53,9 +55,9 @@ typedef void(^GGStepperValueChangeBlock)(double oldValue, double newValue);
 @property (nonatomic, assign) CGFloat amountLabelScale;
 
 /** 线条颜色, 默认lightGrayColor */
-@property(nullable, nonatomic, strong) UIColor *lineColor;
+@property (nullable, nonatomic, strong) UIColor *lineColor;
 /** 线条宽度, 默认0.5 */
-@property(nonatomic, assign) CGFloat lineWidth;
+@property (nonatomic, assign) CGFloat lineWidth;
 
 /// 统一设置方法
 - (void)setTextFont:(nullable UIFont *)textFont textColor:(nullable UIColor *)textColor;

@@ -1,13 +1,20 @@
 # GGCustomStepper
 
-仿照 UIStepper 的计量控件，中间显示 value 值。类似京东淘宝的商品加减控件  
+仿照iOS UIStepper 的计量控件，中间显示 value 值。类似京东/淘宝的商品计数  
   
     
 # 概述
 
-仿照 iOS 的 UIStepper 的计量控件，中间显示 value 值，支持文本输入。类似淘宝京东的商品加减控件 
- 
 ![image](https://github.com/251143492/GGCustomStepper/blob/master/GGCustomStepper.png)
+使用方式类似于 UIStepper，可定制度高
+* 支持键盘输入数值
+* 支持设置最大值/最小值
+* 支持设置单次加/减的量
+* 支持分别自定义加/减按钮各种状态下的图片
+* 支持自定义加/减按钮各种状态下的背景图片，可使用图片和纯色
+* 支持自定义边框宽度，颜色
+* 支持修改字体颜色，字号
+* 使用block和代理两种方式回调，block优先级高于代理
 
 # Usage
 
@@ -35,7 +42,7 @@
     [stepper setIncrementImage:[UIImage imageNamed:@"btn_add_d"] forState:UIControlStateNormal];
     [stepper setDecrementImage:[UIImage imageNamed:@"btn_jian_d"] forState:UIControlStateNormal];
 
-![image](https://github.com/251143492/GGCustomStepper/blob/master/GGCustomStepper2.png)
+![image](https://github.com/251143492/GGCustomStepper/blob/master/GGCustomStepper2.jpeg)
 
 数值设置
 

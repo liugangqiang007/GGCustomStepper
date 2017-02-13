@@ -8,10 +8,13 @@
 
 #import "GGCustomStepper.h"
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
 #define GGlineColor [UIColor lightGrayColor]
 static const double  GGAutorepeatTimeInterval = 0.2;
 static const double  GGMinimumValue           = 0.0;
-static const double  GGMaximumValue           = 100.0;
+static const double  GGMaximumValue           = CGFLOAT_MAX;
 static const double  GGDefaultValue           = GGMinimumValue;
 static const double  GGStepValue              = 1.0;
 static const CGFloat GGLineWidth              = 0.5;
@@ -57,6 +60,10 @@ static const CGFloat GGCornerRadius           = 4;
 }
 
 #pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    return self.inputValue;
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (string.length > 0) {
         
@@ -73,15 +80,17 @@ static const CGFloat GGCornerRadius           = 4;
         value = _value;
         // 数量超出范围~
     }
-    
+
     self.value = value;
 }
 
 #pragma mark - personal
 - (void)initialization {
     
+    self.backgroundColor    = [UIColor whiteColor];
     self.layer.cornerRadius = GGCornerRadius;
     self.clipsToBounds      = YES;
+    self.inputValue         = YES;
     self.autorepeat         = YES;
     self.minimumValue       = GGMinimumValue;
     self.maximumValue       = GGMaximumValue;
@@ -108,7 +117,7 @@ static const CGFloat GGCornerRadius           = 4;
 // 布局
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
+
     CGFloat height = self.frame.size.height;
     CGFloat width = self.frame.size.width;
     
@@ -159,7 +168,7 @@ static const CGFloat GGCornerRadius           = 4;
     /** ToolBar */
     UIToolbar *tool = [[UIToolbar alloc] init];
     tool.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44);
-    
+
     UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(toolbarDoneClicked)];
     tool.items = @[flexSpace, item];
@@ -245,7 +254,7 @@ static const CGFloat GGCornerRadius           = 4;
 }
 
 - (void)setValue:(double)value {
-    
+
     if (self.valueChange) {
         self.valueChange(_value, value);
     } else if ([self.delegate respondsToSelector:@selector(customStepper:changeValue:oldValue:)]) {
@@ -345,7 +354,7 @@ static const CGFloat GGCornerRadius           = 4;
 - (UIButton *)decrementButton {
     if (_decrementButton == nil) {
         UIButton *button = [[UIButton alloc] init];
-        
+    
         UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(decrementButtonLongPress:)];
         [button addGestureRecognizer:longPress];
         
@@ -402,3 +411,5 @@ static const CGFloat GGCornerRadius           = 4;
 }
 
 @end
+
+#pragma clang diagnostic pop
